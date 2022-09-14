@@ -6,12 +6,13 @@ const loadPhones = async(searchText, dataLimit) =>{
 }
 
 const displayPhones = (phones, dataLimit) =>{
-    // console.log(phones)
+    console.log(phones.length)
     const phonesContainer = document.getElementById('phones-container');
-    // phonesContainer.textContent = '';
+    phonesContainer.textContent = '';
     // display 10 phones only 
     const showAll = document.getElementById('show-all');
     if(dataLimit && phones.length > 10) {
+        console.log(dataLimit)
         phones = phones.slice(0, 10);
         showAll.classList.remove('d-none');
     }
@@ -32,7 +33,7 @@ const displayPhones = (phones, dataLimit) =>{
     phones.forEach(phone =>{
         const phoneDiv  = document.createElement('div');
         phoneDiv.classList.add('col');
-        console.log(phone)
+        // console.log(phone)
         phoneDiv.innerHTML = `
         <div class="card p-4">
             <img src="${phone.image}" class="card-img-top" alt="...">
@@ -64,15 +65,15 @@ document.getElementById('btn-search').addEventListener('click', function(){
 })
 
 // search input field enter key handler
-document.getElementById('search-field').addEventListener('keypress', function (e) {
-    if (e.key === 'enter') {
+document.getElementById('search-field').addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
         processSearch(10);
     }
 });
 
 const toggleSpinner = isLoading => {
     const loaderSection = document.getElementById('loader');
-    if(!isLoading){
+    if(isLoading){
         loaderSection.classList.remove('d-none')
     }
     else{
