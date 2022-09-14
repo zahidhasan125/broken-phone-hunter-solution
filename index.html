@@ -21,6 +21,14 @@
                 <div id="btn-search" class="btn btn-primary">Search</div>
             </div>
         </section>
+        <!-- loader -->
+        <section id="loader" class="d-none">
+            <div style="height: 400px;" class="d-flex justify-content-center align-items-center">
+                <div class="spinner-border  text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </section>
         <!-- display Search Result -->
         <section>
             <div id="phones-container" class="row row-cols-1 row-cols-md-3 g-4">
@@ -33,19 +41,12 @@
                 <div id="btn-show-all" class="btn btn-primary">Show All</div>
             </div>
         </section>
-        <!-- loader -->
-        <section id="loader" class="d-none">
-            <div style="height: 400px;" class="d-flex justify-content-center align-items-center">
-                <div class="spinner-border  text-success" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-        </section>
+        
         <!-- modal contents -->
         <section>
             
             <!-- Modal -->
-            <div class="modal fade" id="phoneDetailModal" tabindex="-1" aria-labelledby="phoneDetailModalLabel"
+            <div class="modal text-white fade" id="phoneDetailModal" tabindex="-1" aria-labelledby="phoneDetailModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
